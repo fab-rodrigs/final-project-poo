@@ -5,9 +5,25 @@
 
 ## Descrição Geral do domínio do problema
 
-Descrever de forma geral o domínio do problema.
+O projeto **Bombertronic** consiste na recriação do jogo clássico *Bomberman*, adaptado à temática de engenharia eletrônica.  
+O jogador controla um personagem em um tabuleiro, que precisa eliminar inimigos e abrir caminho utilizando bombas (representadas por componentes eletrônicos) para alcançar objetivos e completar o nível.
 
-Possíveis requisitos funcionais e não-funcionais podem ser elencados aqui.
+### Requisitos do Sistema
+
+#### Requisitos Funcionais
+1. O jogador deve poder se mover em quatro direções (cima, baixo, esquerda, direita).
+2. O jogador deve ser capaz de colocar bombas que explodem após um intervalo de tempo.
+3. As explosões devem destruir blocos destrutíveis, eliminar inimigos e causar dano ao jogador.
+4. Inimigos devem se mover no tabuleiro de forma dinâmica, tentando atingir o jogador.
+5. Power-ups devem estar disponíveis para aumentar habilidades (ex.: raio da explosão, velocidade).
+6. O sistema deve permitir níveis progressivamente mais difíceis.
+
+#### Requisitos Não Funcionais
+1. O jogo será desenvolvido em **C++**, utilizando princípios de Programação Orientada a Objetos.
+2. A interface inicial será textual (console), com possível expansão para uma interface gráfica.
+3. O sistema deve ser responsivo e rodar de maneira eficiente em hardware convencional.
+
+---
 
 ## Diagrama de Casos de Uso
 
