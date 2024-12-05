@@ -2,13 +2,13 @@
      width="30%"
      style="padding: 10px">
 
-# << Título do projeto >>
+# << Bombertronic >>
 
 ## << Descrição breve do domínio do problema >>
 
 > Repositório destinado para o desenvolvimento do projeto final da disciplina PRG22107 - Programação orienta a objeto. 
 > 
-> Aluno: Nome do aluno  
+> Aluno: Fabrício Rodrigues de Santana 
 > Professor: Hugo Marcondes
 
 <p align=center><strong>SUMÁRIO</strong></p>
@@ -17,5 +17,3 @@
 [**2. PROJETO ORIENTADO A OBJETO**](./projeto.md)<br>
 [**3. IMPLEMENTAÇÃO (C++)**](./implementacao.md)<br>
 [**4. TESTES**](./testes.md)<br>
-
-https://www.mathsisfun.com/games/plumber-game.html
