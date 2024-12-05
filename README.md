@@ -6,6 +6,8 @@
 
 ## << Descrição breve do domínio do problema >>
 
+Recriação do jogo Bomberman utilizando a temática de eletrônica.
+
 > Repositório destinado para o desenvolvimento do projeto final da disciplina PRG22107 - Programação orienta a objeto. 
 > 
 > Aluno: Fabrício Rodrigues de Santana 
