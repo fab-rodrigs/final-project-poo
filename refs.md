@@ -16,5 +16,3 @@ Bomberman com Temática de Engenharia
   Extras:
       Ao avançar, o jogador "conserta" o sistema e desbloqueia novas ferramentas (power-ups).
   Mapas mais avançados podem introduzir sistemas interativos, como portas lógicas que precisam ser manipuladas para liberar a passagem.
-
-![Exemplo Borberman]([https://exemplo.com/logo.png](https://s2-techtudo.glbimg.com/ZJH3NS91RE-QV6wXkmmiu68zgjI=/0x0:695x457/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/M/8/fZoFJGTcuGl1z7cY6Ixw/2016-03-17-curiosidades-bomberman.jpg))
