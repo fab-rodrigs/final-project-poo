@@ -10,9 +10,9 @@ O projeto consiste na recriação do jogo Bomberman, adaptado à temática de en
 
 Os desafios incluem:
 
-Gerenciar os elementos do tabuleiro, como obstáculos e power-ups.
-Implementar inimigos com movimentação dinâmica.
-Controlar o jogador e as explosões de maneira estratégica e eficiente.
+- Gerenciar os elementos do tabuleiro, como obstáculos e power-ups.
+- Implementar inimigos com movimentação dinâmica.
+- Controlar o jogador e as explosões de maneira estratégica e eficiente.
 
 > Repositório destinado para o desenvolvimento do projeto final da disciplina PRG22107 - Programação orienta a objeto. 
 > 
