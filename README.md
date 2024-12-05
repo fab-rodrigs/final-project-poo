@@ -6,7 +6,7 @@
 
 ## << Descrição breve do domínio do problema >>
 
-> Repositório destinado para o desenvolvimento do projeto final da discipliana PRG22107 - Programação orienta a objeto. 
+> Repositório destinado para o desenvolvimento do projeto final da disciplina PRG22107 - Programação orienta a objeto. 
 > 
 > Aluno: Nome do aluno  
 > Professor: Hugo Marcondes
