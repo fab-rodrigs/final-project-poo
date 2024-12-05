@@ -29,7 +29,7 @@ O jogador controla um personagem em um tabuleiro, que precisa eliminar inimigos 
 
 Apresentar o diagram de casos de uso, identificando as funcionalidades do sistema assim como os atores envolvidos
 
-![Diagrama em construção...](https://lucid.app/lucidchart/4e12f8d9-27eb-4137-b5e5-dceca029568a/edit?viewport_loc=-245%2C-93%2C2219%2C1079%2C.Q4MUjXso07N&invitationId=inv_f505ca5f-3f73-4dc2-9860-56afcce4392b )
+[Diagrama em construção...](https://lucid.app/lucidchart/4e12f8d9-27eb-4137-b5e5-dceca029568a/edit?viewport_loc=-245%2C-93%2C2219%2C1079%2C.Q4MUjXso07N&invitationId=inv_f505ca5f-3f73-4dc2-9860-56afcce4392b )
  
 ## Diagrama de Domínio do problema
 
