@@ -6,7 +6,13 @@
 
 ## << Descrição breve do domínio do problema >>
 
-Recriação do jogo Bomberman utilizando a temática de eletrônica.
+O projeto consiste na recriação do jogo Bomberman, adaptado à temática de engenharia eletrônica. O objetivo do jogador é navegar por um ambiente inspirado em circuitos eletrônicos, utilizando bombas representadas por componentes eletrônicos (ex.: capacitores, diodos, indutores, etc) para eliminar inimigos e abrir caminho até o objetivo final.
+
+Os desafios incluem:
+
+Gerenciar os elementos do tabuleiro, como obstáculos e power-ups.
+Implementar inimigos com movimentação dinâmica.
+Controlar o jogador e as explosões de maneira estratégica e eficiente.
 
 > Repositório destinado para o desenvolvimento do projeto final da disciplina PRG22107 - Programação orienta a objeto. 
 > 
