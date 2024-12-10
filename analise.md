@@ -20,8 +20,6 @@ O jogador controla um personagem em um tabuleiro, que precisa eliminar inimigos 
 
 #### Requisitos Não Funcionais
 1. O jogo será desenvolvido em **C++**, utilizando princípios de Programação Orientada a Objetos.
-2. A interface inicial será textual (console), com possível expansão para uma interface gráfica.
-3. O sistema deve ser responsivo e rodar de maneira eficiente em hardware convencional.
 
 ---
 
