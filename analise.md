@@ -45,3 +45,7 @@ Elaborar um diagrama conceitual do domínio do problema.
 [Retroceder](README.md) | [Avançar](projeto.md)
 
 </div>
+
+Referência:
+![super-bomberman-1-02-1](https://github.com/user-attachments/assets/574e3fac-46be-4872-8174-7a24c1c45438)
+
