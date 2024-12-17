@@ -40,12 +40,12 @@ Elaborar um diagrama conceitual do domínio do problema.
 
 [Link Projeto Diagrama](https://lucid.app/lucidchart/b6db8b01-bab8-40ed-8803-71de77651b21/edit?viewport_loc=1104%2C1351%2C1017%2C463%2CHWEp-vi-RSFO&invitationId=inv_98f42fdf-dceb-4b30-8211-3f8f97844d28)
 
+### Referência:
+![super-bomberman-1-02-1](https://github.com/user-attachments/assets/574e3fac-46be-4872-8174-7a24c1c45438)
+
 <div align="center">
 
 [Retroceder](README.md) | [Avançar](projeto.md)
 
 </div>
-
-### Referência:
-![super-bomberman-1-02-1](https://github.com/user-attachments/assets/574e3fac-46be-4872-8174-7a24c1c45438)
 
