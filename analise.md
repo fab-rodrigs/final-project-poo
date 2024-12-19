@@ -16,7 +16,6 @@ O jogador controla um personagem em um tabuleiro, que precisa eliminar inimigos 
 3. As explosões devem destruir blocos destrutíveis, eliminar inimigos e causar dano ao jogador.
 4. Inimigos devem se mover no tabuleiro de forma dinâmica, tentando atingir o jogador.
 5. Power-ups devem estar disponíveis para aumentar habilidades.
-6. O sistema deve permitir níveis progressivamente mais difíceis.
 
 #### Requisitos Não Funcionais
 1. O jogo será desenvolvido em **C++**, utilizando princípios de Programação Orientada a Objetos.
