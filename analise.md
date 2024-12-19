@@ -25,7 +25,7 @@ O jogador controla um personagem em um tabuleiro, que precisa eliminar inimigos 
 
 ## Diagrama de Casos de Uso
 
-Apresentar o diagrama de casos de uso, identificando as funcionalidades do sistema assim como os atores envolvidos
+Apresentar o diagrama de casos de uso, identificando as funcionalidades do sistema assim como os atores envolvidos.
 
 ![Diagrama de caso de uso](https://github.com/user-attachments/assets/65c25a8e-186b-4e9b-acba-3852f416b395)
 
