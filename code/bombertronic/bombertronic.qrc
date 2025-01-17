@@ -1,4 +1,8 @@
 <RCC>
-    <qresource prefix="bombertronic">
+    <qresource prefix="/">
+        <file>img/0.png</file>
+        <file>img/1.png</file>
+        <file>img/2.png</file>
+        <file>img/3.png</file>
     </qresource>
 </RCC>

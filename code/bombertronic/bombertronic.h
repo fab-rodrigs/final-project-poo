@@ -1,7 +1,10 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_bombertronic.h"
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QGridLayout>
+#include <QPixmap>
+#include <QString>
 
 class bombertronic : public QMainWindow
 {
@@ -11,7 +14,10 @@ public:
     bombertronic(QWidget *parent = nullptr);
     ~bombertronic();
     void createMatrix();
+    void paintEvent(QPaintEvent* event);
 
 private:
-    Ui::bombertronicClass ui;
+    int matriz[13][15];
+    QWidget* centralWidget;
+    QGridLayout* gridLayout;
 };
