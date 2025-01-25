@@ -8,8 +8,10 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QPainter>
+#include <QKeyEvent>
 
 using namespace std;
+
 
 bombertronic::bombertronic(QWidget* parent)
     : QMainWindow(parent), centralWidget(new QWidget(this)), gridLayout(new QGridLayout)
@@ -28,23 +30,26 @@ void bombertronic::createMatrix()
 
     for (int i = 0; i < 13; i++) {
         for (int j = 0; j < 15; j++) {
-            if (i == 0 || j == 0 || i == 12 || j == 14 || (i % 2 == 0 && j % 2 == 0)) {
+            if (i == 0 || j == 0 || i == 12 || j == 14 || (i % 2 == 0 && j % 2 == 0)) { // wall
                 matriz[i][j] = 1;
             }
             else if ((i == 1 && j == 1) || (i == 1 && j == 2) || (i == 2 && j == 1) ||
-                (i == 11 && j == 12) || (i == 11 && j == 13) || (i == 10 && j == 13)) {
+                     (i == 11 && j == 12) || (i == 10 && j == 13)) { // ground
                 matriz[i][j] = 0;
             }
-            else if ((i == 11 && j == 1) || (i == 6 && j == 7) || (i == 1 && j == 13)) {
+            else if ((i == 11 && j == 1) || (i == 6 && j == 7) || (i == 1 && j == 13)) { // lucky
                 matriz[i][j] = (rand() % 10 < 6) ? 3 : 0;
             }
+            else if(i == 11 && j == 13){ // portal
+                matriz[i][j] = 4;
+            }
             else {
-                matriz[i][j] = (rand() % 2 == 0) ? 2 : 0;
+                matriz[i][j] = (rand() % 2 == 0) ? 2 : 0; // box
             }
         }
     }
 
-    update();  // Atualiza a tela para chamar paintEvent
+    update();  // atualiza a tela
 }
 
 void bombertronic::paintEvent(QPaintEvent* event)
@@ -61,25 +66,41 @@ void bombertronic::paintEvent(QPaintEvent* event)
             QPixmap imagem;
 
             switch (matriz[i][j]) {
-            case 0:
-                imagem.load(":/img/0.png");
-                break;
-            case 1:
-                imagem.load(":/img/1.png");
-                break;
-            case 2:
-                imagem.load(":/img/2.png");
-                break;
-            case 3:
-                imagem.load(":/img/3.png");
-                break;
-            default:
-                imagem.load(":/img/0.png");
-                break;
+                case 0:
+                    imagem.load(":/img/ground.png");
+                    //for(int i = 0; i<5; i++){
+                    //    Bot* bot = new Bot(i, j);
+                    //    if (bot) {
+                    //        painter.drawPixmap(bot->y * cellSize, bot->x * cellSize, cellSize, cellSize, bot->sprite);
+                    //    }
+                    //}
+                    break;
+                case 1:
+                    imagem.load(":/img/wall.png");
+                    break;
+                case 2:
+                    imagem.load(":/img/box.png");
+                    break;
+                case 3:
+                    imagem.load(":/img/lucky.png");
+                    break;
+                case 4:
+                    imagem.load(":/img/portal.png");
+                    break;
+                default:
+                    imagem.load(":/img/ground.png");
+                    break;
             }
 
-            // Desenha a imagem na posição (i, j)
             painter.drawPixmap(j * cellSize, i * cellSize, cellSize, cellSize, imagem);
+
+
+            Player* player = new Player(1, 1);
+            //if (player) {
+                painter.drawPixmap(player->y * cellSize, player->x * cellSize, cellSize, cellSize, player->sprite);
+            //}
         }
     }
 }
+
+
