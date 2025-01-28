@@ -35,7 +35,7 @@ Apresentar o diagrama de casos de uso, identificando as funcionalidades do siste
 
 Elaborar um diagrama conceitual do domínio do problema.
 
-![Domínio do Problema UML](https://github.com/user-attachments/assets/abd86376-cccb-4a95-8153-7f40d42feac2)
+![Domínio do Problema UML](https://github.com/user-attachments/assets/91a0c844-c520-48f6-9f7e-8fec894f414a)
 
 [Link Projeto Diagrama](https://lucid.app/lucidchart/b6db8b01-bab8-40ed-8803-71de77651b21/edit?viewport_loc=1104%2C1351%2C1017%2C463%2CHWEp-vi-RSFO&invitationId=inv_98f42fdf-dceb-4b30-8211-3f8f97844d28)
 

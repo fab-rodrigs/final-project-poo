@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BOMBERTRONIC_H
+#define BOMBERTRONIC_H
 
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QLabel>
@@ -6,29 +7,10 @@
 #include <QPixmap>
 #include <QString>
 
-class Player {
-public:
-    int x, y;
-    QPixmap sprite;
-
-    Player(int startX, int startY) {
-        x = startX;
-        y = startY;
-        sprite = QPixmap(":/img/player.png");
-    }
-};
-
-class Bot {
-public:
-    int x, y;
-    QPixmap sprite;
-
-    Bot(int startX, int startY){
-        x = startX;
-        y = startY;
-        sprite = QPixmap(":/img/bot.png");
-    }
-};
+#include "player.h"
+#include "map.h"
+#include "enemy.h"
+#include "bomb.h"
 
 class bombertronic : public QMainWindow
 {
@@ -45,8 +27,8 @@ private:
     int matriz[13][15];
     QWidget* centralWidget;
     QGridLayout* gridLayout;
-    Player* player;
-    Bot* bot;
 };
+
+#endif // BOMBERTRONIC_H
 
 

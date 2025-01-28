@@ -13,7 +13,11 @@ SOURCES += \
     bombertronic.cpp
 
 HEADERS += \
-    bombertronic.h
+    bomb.h \
+    bombertronic.h \
+    enemy.h \
+    map.h \
+    player.h
 
 FORMS += \
     bombertronic.ui

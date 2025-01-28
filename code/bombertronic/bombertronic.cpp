@@ -68,12 +68,6 @@ void bombertronic::paintEvent(QPaintEvent* event)
             switch (matriz[i][j]) {
                 case 0:
                     imagem.load(":/img/ground.png");
-                    //for(int i = 0; i<5; i++){
-                    //    Bot* bot = new Bot(i, j);
-                    //    if (bot) {
-                    //        painter.drawPixmap(bot->y * cellSize, bot->x * cellSize, cellSize, cellSize, bot->sprite);
-                    //    }
-                    //}
                     break;
                 case 1:
                     imagem.load(":/img/wall.png");
@@ -93,12 +87,6 @@ void bombertronic::paintEvent(QPaintEvent* event)
             }
 
             painter.drawPixmap(j * cellSize, i * cellSize, cellSize, cellSize, imagem);
-
-
-            Player* player = new Player(1, 1);
-            //if (player) {
-                painter.drawPixmap(player->y * cellSize, player->x * cellSize, cellSize, cellSize, player->sprite);
-            //}
         }
     }
 }
