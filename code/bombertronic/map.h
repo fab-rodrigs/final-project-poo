@@ -1,11 +1,15 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
+
 class Map {
 private:
-    int rows, cols;
+    int i, j;
+    QGraphicsScene * scene;
 public:
-    Map(int rows, int cols);
+    Map(QGraphicsScene * scene, int i, int j);
     void generateMap();
     int getCell(int x, int y);
     void setCell(int x, int y, int value);
