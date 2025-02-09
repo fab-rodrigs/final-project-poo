@@ -14,6 +14,12 @@ Bombertronic::Bombertronic(QWidget* parent)
     Map * map = new Map(scene, 240, 240);
     map->generateMap();
 
+    Obstacle *obstacle = new Obstacle(scene);
+    obstacle->randomSpawn();
+
+    Treasure *treasure = new Treasure(scene);
+    treasure->randomSpawn();
+
     view->scale(2,2);
     setCentralWidget(view);
     setFixedSize(sizeHint());

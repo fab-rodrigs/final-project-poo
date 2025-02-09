@@ -5,7 +5,7 @@
 #include <QGraphicsPixmapItem>
 
 class Map {
-private:
+protected:
     int i, j;
     QGraphicsScene * scene;
 public:
@@ -15,21 +15,21 @@ public:
     void setCell(int x, int y, int value);
 };
 
-class Obstacle {
+class Obstacle : public Map{
 private:
     bool breakable;
     int spawnPosition;
 public:
-    Obstacle();
+    Obstacle(QGraphicsScene *scene);
     void randomSpawn();
 };
 
-class Treasure {
+class Treasure : public Map{
 private:
     int spawnPosition;
     int item;
 public:
-    Treasure();
+    Treasure(QGraphicsScene *scene);
     void randomSpawn();
     void dropItem();
 };
