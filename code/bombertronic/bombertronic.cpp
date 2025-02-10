@@ -52,7 +52,7 @@ void Bombertronic::keyPressEvent(QKeyEvent * event)
         player->move(0, player->getY()+16);
     }
 
-    player->setPos(player->getX(), player->getY()); // Atualiza posição no jogo
+    player->setPos(player->getX(), player->getY());
 }
 
 
