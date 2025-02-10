@@ -17,10 +17,12 @@ class Bombertronic : public QMainWindow
 public:
     Bombertronic(QWidget *parent = nullptr);
     ~Bombertronic();
+    void keyPressEvent(QKeyEvent * event);
 
 private:
     QGraphicsScene * scene;
     QGraphicsView  * view;
+    Player * player;
 };
 
 #endif // BOMBERTRONIC_H

@@ -1,7 +1,10 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-class Player {
+#include <QGraphicsPixmapItem>
+#include <QKeyEvent>
+
+class Player : public QGraphicsPixmapItem{
 private:
     int x,y;
     int lifeQuantity;
@@ -10,12 +13,13 @@ private:
     int powerUpType;
 public:
     Player(int startX, int startY);
-    void move();
+    void move(int newX, int newY);
     void loseLife();
     void addScore();
     void usePowerUp();
-    int getX();
-    int getY();
+
+    int getX() const { return x; }
+    int getY() const { return y; }
 };
 
 class PowerUp {
