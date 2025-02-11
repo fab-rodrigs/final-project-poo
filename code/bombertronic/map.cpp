@@ -42,6 +42,11 @@ void Map::setCell(int x, int y, int value){
 
 }
 
+bool Map::checkPos(int x, int y)
+{
+
+}
+
 Obstacle::Obstacle(QGraphicsScene *scene) : Map(scene, 240, 240) {}
 
 void Obstacle::randomSpawn(){

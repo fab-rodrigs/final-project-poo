@@ -13,7 +13,7 @@ Bombertronic::Bombertronic(QWidget* parent)
     scene = new QGraphicsScene(this);
     view = new QGraphicsView(scene, this);
 
-    Map * map = new Map(scene, 240, 240);
+    map = new Map(scene, 240, 240);
     map->generateMap();
 
     Obstacle *obstacle = new Obstacle(scene);
@@ -22,7 +22,19 @@ Bombertronic::Bombertronic(QWidget* parent)
     Treasure *treasure = new Treasure(scene);
     treasure->randomSpawn();
 
-    player = new Player(16, 48);
+    enemy1 = new Enemy(112, 48);
+    scene->addItem(enemy1);
+
+    enemy2 = new Enemy(16, 128);
+    scene->addItem(enemy2);
+
+    enemy3 = new Enemy(208, 128);
+    scene->addItem(enemy3);
+
+    enemy4 = new Enemy(112, 208);
+    scene->addItem(enemy4);
+
+    player = new Player(16, 48, map);
     scene->addItem(player);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

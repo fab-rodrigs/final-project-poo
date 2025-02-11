@@ -22,7 +22,12 @@ public:
 private:
     QGraphicsScene * scene;
     QGraphicsView  * view;
+    Map * map;
     Player * player;
+    Enemy * enemy1;
+    Enemy * enemy2;
+    Enemy * enemy3;
+    Enemy * enemy4;
 };
 
 #endif // BOMBERTRONIC_H

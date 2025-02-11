@@ -1,9 +1,9 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#endif // ENEMY_H
+#include <QGraphicsPixmapItem>
 
-class Enemy {
+class Enemy : public QGraphicsPixmapItem{
 private:
     int x, y;
     int position;
@@ -12,3 +12,5 @@ public:
     void randomMoviment();
     void attackPlayer();
 };
+
+#endif // ENEMY_H

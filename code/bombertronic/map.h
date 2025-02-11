@@ -13,6 +13,7 @@ public:
     void generateMap();
     int getCell(int x, int y);
     void setCell(int x, int y, int value);
+    bool checkPos(int x, int y);
 };
 
 class Obstacle : public Map{

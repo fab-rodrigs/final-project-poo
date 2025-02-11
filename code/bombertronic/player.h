@@ -3,6 +3,7 @@
 
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
+#include <map.h>
 
 class Player : public QGraphicsPixmapItem{
 private:
@@ -11,8 +12,10 @@ private:
     int score;
     int bestScore;
     int powerUpType;
+    Map * map;
+
 public:
-    Player(int startX, int startY);
+    Player(int startX, int startY, Map * map);
     void move(int newX, int newY);
     void loseLife();
     void addScore();
