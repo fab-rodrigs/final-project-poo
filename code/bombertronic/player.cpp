@@ -1,5 +1,6 @@
 #include "player.h"
 #include <QGraphicsScene>
+#include <qDebug>
 
 Player::Player(int startX, int startY, Map * m){
     map = m;
@@ -13,12 +14,20 @@ Player::Player(int startX, int startY, Map * m){
 void Player::move(int newX, int newY) {
 
     if(map->checkPos(newX, newY)){
-        if(newX){
-            x = newX;
-        }
-        else{
-            y = newY;
-        }
+        x = newX;
+        y = newY;
     }
+}
+
+int Player::getX()
+{
+    qDebug() << "x = " << x;
+    return x;
+}
+
+int Player::getY()
+{
+    qDebug() << "y = " << y;
+    return y;
 }
 

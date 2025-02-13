@@ -8,6 +8,7 @@ class Map {
 protected:
     int i, j;
     QGraphicsScene * scene;
+    QString mapData[16][16];
 public:
     Map(QGraphicsScene * scene, int i, int j);
     void generateMap();

@@ -52,16 +52,16 @@ void Bombertronic::keyPressEvent(QKeyEvent * event)
     qDebug() << "Tecla pressionada:" << event->key();
 
     if(event->key() == Qt::Key_A){
-        player->move(player->getX()-16, 0);
+        player->move(player->getX()-16, player->getY());
     }
     else if(event->key() == Qt::Key_D){
-        player->move(player->getX()+16, 0);
+        player->move(player->getX()+16, player->getY());
     }
     else if(event->key() == Qt::Key_W){
-        player->move(0, player->getY()-16);
+        player->move(player->getX(), player->getY()-16);
     }
     else if(event->key() == Qt::Key_S){
-        player->move(0, player->getY()+16);
+        player->move(player->getX(), player->getY()+16);
     }
 
     player->setPos(player->getX(), player->getY());

@@ -21,8 +21,8 @@ public:
     void addScore();
     void usePowerUp();
 
-    int getX() const { return x; }
-    int getY() const { return y; }
+    int getX();
+    int getY();
 };
 
 class PowerUp {
