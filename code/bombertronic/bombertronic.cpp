@@ -16,11 +16,11 @@ Bombertronic::Bombertronic(QWidget* parent)
     map = new Map(scene, 240, 240);
     map->generateMap();
 
-    Obstacle *obstacle = new Obstacle(scene);
-    obstacle->randomSpawn();
+    //Obstacle *obstacle = new Obstacle(scene);
+    //obstacle->randomSpawn();
 
-    Treasure *treasure = new Treasure(scene);
-    treasure->randomSpawn();
+    //Treasure *treasure = new Treasure(scene);
+    //treasure->randomSpawn();
 
     enemy1 = new Enemy(112, 48);
     scene->addItem(enemy1);
