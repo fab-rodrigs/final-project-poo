@@ -13,14 +13,14 @@ Bombertronic::Bombertronic(QWidget* parent)
     scene = new QGraphicsScene(this);
     view = new QGraphicsView(scene, this);
 
-    map = new Map(scene, 240, 240);
-    map->generateMap();
-
     //Obstacle *obstacle = new Obstacle(scene);
     //obstacle->randomSpawn();
 
     //Treasure *treasure = new Treasure(scene);
     //treasure->randomSpawn();
+
+    map = new Map(scene, 240, 240);
+    map->generateMap();
 
     enemy1 = new Enemy(112, 48);
     scene->addItem(enemy1);
@@ -49,7 +49,7 @@ Bombertronic::~Bombertronic()
 
 void Bombertronic::keyPressEvent(QKeyEvent * event)
 {
-    qDebug() << "Tecla pressionada:" << event->key();
+    //qDebug() << "Tecla pressionada:" << event->key();
 
     if(event->key() == Qt::Key_A){
         player->move(player->getX()-16, player->getY());

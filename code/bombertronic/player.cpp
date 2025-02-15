@@ -21,13 +21,11 @@ void Player::move(int newX, int newY) {
 
 int Player::getX()
 {
-    qDebug() << "x = " << x;
     return x;
 }
 
 int Player::getY()
 {
-    qDebug() << "y = " << y;
     return y;
 }
 

@@ -23,7 +23,7 @@ private:
     int spawnPosition;
 public:
     Obstacle(QGraphicsScene *scene);
-    void randomSpawn();
+    void randomSpawn(int i, int j);
 };
 
 class Treasure : public Map{
@@ -32,7 +32,7 @@ private:
     int item;
 public:
     Treasure(QGraphicsScene *scene);
-    void randomSpawn();
+    void randomSpawn(int i, int j);
     void dropItem();
 };
 
