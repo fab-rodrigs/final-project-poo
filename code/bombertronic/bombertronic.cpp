@@ -63,6 +63,12 @@ void Bombertronic::keyPressEvent(QKeyEvent * event)
     else if(event->key() == Qt::Key_S){
         player->move(player->getX(), player->getY()+16);
     }
+    else if(event->key() == Qt::Key_Space){
+        //bomb->plant(player->getX(), player->getY());
+        qDebug() << "Bomb has been planted!";
+        bomb = new Bomb(player->getX(), player->getY());
+        scene->addItem(bomb); // pinto
+    }
 
     player->setPos(player->getX(), player->getY());
 }

@@ -8,5 +8,7 @@
 		<file>img/portal.png</file>
 		<file>img/player.png</file>
 		<file>img/bot.png</file>
+		<file>img/capacitor.png</file>
+		<file>img/fire-final-top.png</file>
     </qresource>
 </RCC>
