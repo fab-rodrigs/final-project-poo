@@ -14,8 +14,8 @@ Bomb::Bomb(int x, int y) {
     timer->start(3000);
 }
 
-void Bomb::exlode() {
-    qDebug() << "A bomba explodipu!";
+void Bomb::explode() {
+    qDebug() << "A bomba explodiu!";
 
     setPixmap(QPixmap(":/img/fire-final-top.png").scaledToWidth(16));
 
