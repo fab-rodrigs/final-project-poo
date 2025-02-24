@@ -3,6 +3,7 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+//#include "player.h"
 
 class Map {
 protected:
@@ -25,13 +26,13 @@ public:
     Obstacle(QGraphicsScene *scene);
 };
 
-class Treasure : public Map{
+class Treasure : public Map, public QGraphicsPixmapItem{
 private:
     int spawnPosition;
     int item;
 public:
     Treasure(QGraphicsScene *scene);
-    void dropItem();
+    void dropItem();//(Player *player);
 };
 
 #endif // MAP_H

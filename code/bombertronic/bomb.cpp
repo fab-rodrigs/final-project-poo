@@ -11,7 +11,7 @@ Bomb::Bomb(Map *map, Player *player, Enemy *enemy, int x, int y) : _map(map), _x
     timer->setSingleShot(true);
     connect(timer, &QTimer::timeout, this, &Bomb::explode);
     qDebug() << "3..2..1..";
-    timer->start(3000);
+    timer->start(2000);
 }
 
 void Bomb::explode() {

@@ -57,8 +57,8 @@ void Map::generateMap(){
                     mapData[i / 16][j / 16] = "box";
                 }
             }
-            QGraphicsPixmapItem * wall = scene->addPixmap(QPixmap(image).scaledToWidth(16));
-            wall->setPos(j,i);
+            QGraphicsPixmapItem * block = scene->addPixmap(QPixmap(image).scaledToWidth(16));
+            block->setPos(j,i);
         }
     }
 }
@@ -70,11 +70,12 @@ Obstacle::Obstacle(QGraphicsScene *scene) : Map(scene, 240, 240) {}
 
 
 Treasure::Treasure(QGraphicsScene *scene) : Map(scene, 240, 240) {
-
 }
 
 
-void Treasure::dropItem(){
+void Treasure::dropItem(){//(Player *player){
+    qDebug() << "O jogador recebeu um power-up!";
+
 
 }
 
@@ -114,9 +115,11 @@ bool Map::checkPos(int x, int y) {
     case 2: // portal
         Player * player;
         player->win();
-        return true;
+        return false;
         break;
     case 3: // treasure
+        Treasure *treasure;
+        treasure->dropItem();
         return true;
         break;
     case 4: // box

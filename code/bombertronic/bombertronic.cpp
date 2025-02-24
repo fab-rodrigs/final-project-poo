@@ -24,8 +24,8 @@ Bombertronic::Bombertronic(QWidget* parent)
     enemy1 = new Enemy(112, 48, map, player);
     scene->addItem(enemy1);
 
-    //enemy4 = new Enemy(112, 208, map);
-    //scene->addItem(enemy4);
+    enemy2 = new Enemy(16, 128, map, player);
+    scene->addItem(enemy2);
 
     view->scale(2.3,2.3);
     setCentralWidget(view);
