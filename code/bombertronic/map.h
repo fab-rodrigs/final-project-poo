@@ -13,7 +13,7 @@ public:
     Map(QGraphicsScene * scene, int i, int j);
     void generateMap();
     int getCell(int x, int y);
-    void setCell(int x, int y, int value);
+    void setCell(int x, int y);
     bool checkPos(int x, int y);
 };
 
@@ -23,7 +23,6 @@ private:
     int spawnPosition;
 public:
     Obstacle(QGraphicsScene *scene);
-    void randomSpawn(int i, int j);
 };
 
 class Treasure : public Map{
@@ -32,7 +31,6 @@ private:
     int item;
 public:
     Treasure(QGraphicsScene *scene);
-    void randomSpawn(int i, int j);
     void dropItem();
 };
 

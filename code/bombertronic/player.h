@@ -20,6 +20,8 @@ public:
     void loseLife();
     void addScore();
     void usePowerUp();
+    void die();
+    void win();
 
     int getX();
     int getY();

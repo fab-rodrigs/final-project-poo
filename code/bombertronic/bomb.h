@@ -2,17 +2,23 @@
 #define BOMB_H
 
 #include <QGraphicsPixmapItem>
+#include "map.h"
+#include "player.h"
+#include "enemy.h"
 
 class Bomb : public QGraphicsPixmapItem, public QObject{
 private:
-    int x,y;
+    int _x,_y;
     int type;
     int explosionDistance;
     int explosionDirection;
     int timer;
     bool exploded;
+    Map *_map;
+    Player *_player;
+    Enemy *_enemy;
 public:
-    Bomb(int x, int y);//, int timer, int explosionDistance, int explosionDirection, int type);
+    Bomb(Map *map, Player *player, int x, int y);
     void changeType();
     void tick();
     void explode();
