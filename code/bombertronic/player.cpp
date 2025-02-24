@@ -33,7 +33,7 @@ void Player::die()
 
     if (gameOverBox.clickedButton()) {
         qDebug() << "Sair do jogo...";
-        QApplication::quit(); // Fecha o aplicativo
+        QApplication::quit();
     }
 
     delete this;

@@ -11,7 +11,7 @@ private:
     int position;
     int direction;
     Map *map;
-    Player *player;
+    Player *_player;
 public:
     Enemy(int startX, int startY, Map *map, Player *player);
     void randomMoviment();

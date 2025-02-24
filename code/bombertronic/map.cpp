@@ -95,7 +95,6 @@ int Map::getCell(int x, int y) {
         return 4;
     }
 
-
     return 0;
 }
 

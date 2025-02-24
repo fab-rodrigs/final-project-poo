@@ -16,16 +16,16 @@ Bombertronic::Bombertronic(QWidget* parent)
     map = new Map(scene, 240, 240);
     map->generateMap();
 
+    player = new Player(16, 48, map);
+    scene->addItem(player);
+    player->setFlag(QGraphicsItem::ItemIsFocusable);
+    player->setFocus();
+
     enemy1 = new Enemy(112, 48, map, player);
     scene->addItem(enemy1);
 
     //enemy4 = new Enemy(112, 208, map);
     //scene->addItem(enemy4);
-
-    player = new Player(16, 48, map);
-    scene->addItem(player);
-    player->setFlag(QGraphicsItem::ItemIsFocusable);
-    player->setFocus();
 
     view->scale(2.3,2.3);
     setCentralWidget(view);
