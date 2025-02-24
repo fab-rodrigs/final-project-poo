@@ -13,7 +13,7 @@ private:
     Map *map;
     Player *player;
 public:
-    Enemy(int startX, int startY, Map *map);
+    Enemy(int startX, int startY, Map *map, Player *player);
     void randomMoviment();
     void die();
     void kill();

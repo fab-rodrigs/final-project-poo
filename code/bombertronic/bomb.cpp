@@ -3,7 +3,7 @@
 #include <QTimer>
 #include <QDebug>
 
-Bomb::Bomb(Map *map, Player *player, int x, int y) : _map(map), _x(x), _y(y), _player(player), _enemy(enemy){
+Bomb::Bomb(Map *map, Player *player, Enemy *enemy, int x, int y) : _map(map), _x(x), _y(y), _player(player), _enemy(enemy){
     setPixmap(QPixmap(":/img/capacitor.png").scaledToWidth(16));
     setPos(x, y);
 
@@ -63,9 +63,9 @@ void Bomb::explode() {
 
     if ((_enemy->getX() == _x && _enemy->getY() == _y) || // Célula da bomba
         (_enemy->getX() == _x + 16 && _enemy->getY() == _y) || // Direita
-        (_enemy->getX() == _x - 16 && __enemy->getY() == _y) || // Esquerda
+        (_enemy->getX() == _x - 16 && _enemy->getY() == _y) || // Esquerda
         (_enemy->getX() == _x && _enemy->getY() == _y + 16) || // Abaixo
-        (_enemyr->getX() == _x && _enemy->getY() == _y - 16)) { // Acima
+        (_enemy->getX() == _x && _enemy->getY() == _y - 16)) { // Acima
         qDebug() << "Inimigo atingido pela explosão!";
         _enemy->die();
     }

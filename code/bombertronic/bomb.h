@@ -18,7 +18,7 @@ private:
     Player *_player;
     Enemy *_enemy;
 public:
-    Bomb(Map *map, Player *player, int x, int y);
+    Bomb(Map *map, Player *player, Enemy *enemy, int x, int y);
     void changeType();
     void tick();
     void explode();
