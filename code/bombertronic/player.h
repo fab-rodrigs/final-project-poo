@@ -3,7 +3,9 @@
 
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
-#include <map.h>
+#include "map.h"
+
+class PowerUp;
 
 class Player : public QGraphicsPixmapItem{
 private:
@@ -13,26 +15,25 @@ private:
     int bestScore;
     int powerUpType;
     Map * map;
-
+    PowerUp *power;
 public:
     Player(int startX, int startY, Map * map);
     void move(int newX, int newY);
     void loseLife();
     void addScore();
-    void usePowerUp();
-    void die();
+    void die(int powerType);
     void win();
 
     int getX();
     int getY();
 };
 
-class PowerUp {
+class PowerUp : public QGraphicsPixmapItem{
 private:
     int type;
 public:
     PowerUp();
-    void usePower();
+    int usePowerUp(int type);
 };
 
 #endif // PLAYER_H

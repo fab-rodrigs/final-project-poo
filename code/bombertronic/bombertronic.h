@@ -29,6 +29,7 @@ private:
     Enemy * enemy3;
     Enemy * enemy4;
     Bomb * bomb;
+    PowerUp * power;
 };
 
 #endif // BOMBERTRONIC_H

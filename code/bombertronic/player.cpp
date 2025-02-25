@@ -22,22 +22,7 @@ void Player::move(int newX, int newY) {
     }
 }
 
-void Player::die()
-{
-    scene()->removeItem(this);
-    QMessageBox gameOverBox;
-    gameOverBox.setWindowTitle("Game Over");
-    gameOverBox.setText("Você morreu!");
-    gameOverBox.addButton("Sair", QMessageBox::RejectRole);
-    gameOverBox.exec();
 
-    if (gameOverBox.clickedButton()) {
-        qDebug() << "Sair do jogo...";
-        QApplication::quit();
-    }
-
-    delete this;
-}
 
 void Player::win()
 {
@@ -63,3 +48,31 @@ int Player::getY()
     return y;
 }
 
+
+int PowerUp::usePowerUp(int type)
+{
+    return type;
+}
+
+void Player::die(int powerType)
+{
+    QMessageBox gameOverBox;
+    if(powerType){
+        gameOverBox.setWindowTitle("Power-Up");
+        gameOverBox.setText("Você possui mais uma vida!");
+        gameOverBox.addButton("Continuar", QMessageBox::RejectRole);
+        qDebug() << "PowerUp usado! O jogador possui uma vida extra.";
+    }
+    else{
+        scene()->removeItem(this);
+        gameOverBox.setWindowTitle("Game Over");
+        gameOverBox.setText("Você morreu!");
+        gameOverBox.addButton("Sair", QMessageBox::RejectRole);
+        gameOverBox.exec();
+        if (gameOverBox.clickedButton()) {
+            qDebug() << "Sair do jogo...";
+            QApplication::quit();
+        }
+        delete this;
+    }
+}

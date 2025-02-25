@@ -12,8 +12,9 @@ private:
     int direction;
     Map *map;
     Player *_player;
+    PowerUp *_power;
 public:
-    Enemy(int startX, int startY, Map *map, Player *player);
+    Enemy(int startX, int startY, Map *map, Player *player, PowerUp *power);
     void randomMoviment();
     void die();
     void kill();

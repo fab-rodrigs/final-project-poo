@@ -17,12 +17,15 @@ private:
     Map *_map;
     Player *_player;
     Enemy *_enemy;
+    Treasure *_treasure;
+    PowerUp *_power;
 public:
-    Bomb(Map *map, Player *player, Enemy *enemy, int x, int y);
+    Bomb(Map *map, Player *player, Enemy *enemy, Treasure *treasure, PowerUp *power, int x, int y);
     void changeType();
     void tick();
     void explode();
     bool isExploded();
+    void detector(int cellX, int cellY, Map *map, Player *player, Enemy *enemy, Treasure *treasure);
 };
 
 

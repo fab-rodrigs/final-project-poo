@@ -3,7 +3,7 @@
 #include <QTimer>
 #include <QDebug>
 
-Enemy::Enemy(int startX, int startY, Map *map, Player *player) : map(map), _player(player)
+Enemy::Enemy(int startX, int startY, Map *map, Player *player, PowerUp *power) : map(map), _player(player), _power(power)
 {
     x = startX;
     y = startY;
@@ -25,8 +25,9 @@ void Enemy::randomMoviment()
     int speed = 16;
     int nextX;
     int nextY;
+    int powerType = 0;
 
-    qDebug() << "Inimigo se preparando...";
+    //qDebug() << "Inimigo se preparando...";
 
     if (rand() % 100 <= 50){
         nextX = x + speed * direction;
@@ -57,12 +58,12 @@ void Enemy::randomMoviment()
         }
     }
     setPos(x, y);
-    qDebug() << "Posição inimigo: (" << x << ", " << y << ")";
-    qDebug() << "Posição jogador: (" << _player->getX() << ", " << _player->getY() << ")"; //CRASHA AQUI
+    //qDebug() << "Posição inimigo: (" << x << ", " << y << ")";
+    //qDebug() << "Posição jogador: (" << _player->getX() << ", " << _player->getY() << ")"; //CRASHA AQUI
 
     if (_player && x == _player->getX() && y == _player->getY()) {
         qDebug() << "Inimigo matou o jogador!";
-        _player->die();
+        _player->die(powerType);
     }
 }
 

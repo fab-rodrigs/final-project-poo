@@ -73,18 +73,12 @@ Treasure::Treasure(QGraphicsScene *scene) : Map(scene, 240, 240) {
 }
 
 
-void Treasure::dropItem(){//(Player *player){
-    qDebug() << "O jogador recebeu um power-up!";
-
-
-}
-
 int Map::getCell(int x, int y) {
     int cellX = x / 16;
     int cellY = y / 16;
 
     QString cellType = mapData[cellY][cellX];
-    qDebug() << "Célula: (" << x << ", " << y << ") -> Tipo: " << cellType;
+    //qDebug() << "Célula: (" << x << ", " << y << ") -> Tipo: " << cellType;
 
     if (cellType == "wall") {
         return 1;
@@ -118,9 +112,9 @@ bool Map::checkPos(int x, int y) {
         return false;
         break;
     case 3: // treasure
-        Treasure *treasure;
-        treasure->dropItem();
-        return true;
+        //Treasure *treasure;
+        //treasure->dropItem();
+        return false;
         break;
     case 4: // box
         return false;

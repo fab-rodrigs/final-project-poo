@@ -21,10 +21,10 @@ Bombertronic::Bombertronic(QWidget* parent)
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
-    enemy1 = new Enemy(112, 48, map, player);
+    enemy1 = new Enemy(112, 48, map, player, power);
     scene->addItem(enemy1);
 
-    enemy2 = new Enemy(16, 128, map, player);
+    enemy2 = new Enemy(16, 128, map, player, power);
     scene->addItem(enemy2);
 
     view->scale(2.3,2.3);
@@ -52,7 +52,9 @@ void Bombertronic::keyPressEvent(QKeyEvent * event)
         player->move(player->getX(), player->getY()+16);
     }
     if(event->key() == Qt::Key_Space){
-        bomb = new Bomb(map, player, enemy1, player->getX(), player->getY());
+        Treasure *treasure;
+        PowerUp *power;
+        bomb = new Bomb(map, player, enemy1, treasure, power, player->getX(), player->getY());
         scene->addItem(bomb);
         qDebug() << "A bomba foi plantada!";
     }

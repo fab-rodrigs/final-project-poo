@@ -3,7 +3,7 @@
 #include <QTimer>
 #include <QDebug>
 
-Bomb::Bomb(Map *map, Player *player, Enemy *enemy, int x, int y) : _map(map), _x(x), _y(y), _player(player), _enemy(enemy){
+Bomb::Bomb(Map *map, Player *player, Enemy *enemy, Treasure *treasure, PowerUp *power, int x, int y) : _map(map), _x(x), _y(y), _player(player), _enemy(enemy), _treasure(treasure), _power(power){
     setPixmap(QPixmap(":/img/capacitor.png").scaledToWidth(16));
     setPos(x, y);
 
@@ -28,37 +28,59 @@ void Bomb::explode() {
     int cellX = _x / 16;
     int cellY = _y / 16;
 
-    // Verifica à direita
-    if (_map->getCell((cellX + 1) * 16, cellY * 16) == 4) {
+    detector(cellX, cellY, _map, _player, _enemy, _treasure);
+}
+
+void Bomb::detector(int cellX, int cellY, Map *_map, Player *_player, Enemy *_enemy, Treasure *_treasure){
+    int powerType = 0;
+    if (_map->getCell((cellX + 1) * 16, cellY * 16) == 4) { // Direita
         qDebug() << "Caixa encontrada à direita! Removendo...";
         _map->setCell((cellX + 1) * 16, cellY * 16);
     }
-
-    // Verifica à esquerda
-    if (_map->getCell((cellX - 1) * 16, cellY * 16) == 4) {
-        qDebug() << "Caixa encontrada à esquerda! Removendo...";
+    else if (_map->getCell((cellX + 1) * 16, cellY * 16) == 3) { // Direita
+        qDebug() << "Tesouro encontrado à direita! Obtendo power-up...";
+        powerType = _power->usePowerUp(1);
         _map->setCell((cellX - 1) * 16, cellY * 16);
     }
 
-    // Verifica acima
-    if (_map->getCell(cellX * 16, (cellY - 1) * 16) == 4) {
+    if (_map->getCell((cellX - 1) * 16, cellY * 16) == 4) { // Esquerda
+        qDebug() << "Caixa encontrada à esquerda! Removendo...";
+        _map->setCell((cellX - 1) * 16, cellY * 16);
+    }
+    else if (_map->getCell((cellX - 1) * 16, cellY * 16) == 3) { // Esquerda
+        qDebug() << "Tesouro encontrado à direita! Obtendo power-up...";
+        powerType = _power->usePowerUp(1);
+        _map->setCell((cellX - 1) * 16, cellY * 16);
+    }
+
+    if (_map->getCell(cellX * 16, (cellY - 1) * 16) == 4) { // Acima
         qDebug() << "Caixa encontrada acima! Removendo...";
         _map->setCell(cellX * 16, (cellY - 1) * 16);
     }
+    else if (_map->getCell(cellX * 16, (cellY - 1) * 16) == 3) { // Acima
+        qDebug() << "Tesouro encontrado à direita! Obtendo power-up...";
+        powerType = _power->usePowerUp(1);
+        _map->setCell(cellX * 16, (cellY - 1) * 16);
+    }
 
-    // Verifica abaixo
-    if (_map->getCell(cellX * 16, (cellY + 1) * 16) == 4) {
+    if (_map->getCell(cellX * 16, (cellY + 1) * 16) == 4) { // Abaixo
         qDebug() << "Caixa encontrada abaixo! Removendo...";
         _map->setCell(cellX * 16, (cellY + 1) * 16);
     }
 
+    else if (_map->getCell(cellX * 16, (cellY + 1) * 16) == 3) { // Abaixo
+        qDebug() << "Tesouro encontrado à direita! Obtendo power-up...";
+        powerType = _power->usePowerUp(1);
+        _map->setCell(cellX * 16, (cellY + 1) * 16);
+    }
+
     if ((_player->getX() == _x && _player->getY() == _y) || // Célula da bomba
-      (_player->getX() == _x + 16 && _player->getY() == _y) || // Direita
-      (_player->getX() == _x - 16 && _player->getY() == _y) || // Esquerda
-      (_player->getX() == _x && _player->getY() == _y + 16) || // Abaixo
-      (_player->getX() == _x && _player->getY() == _y - 16)) { // Acima
+        (_player->getX() == _x + 16 && _player->getY() == _y) || // Direita
+        (_player->getX() == _x - 16 && _player->getY() == _y) || // Esquerda
+        (_player->getX() == _x && _player->getY() == _y + 16) || // Abaixo
+        (_player->getX() == _x && _player->getY() == _y - 16)) { // Acima
         qDebug() << "Jogador atingido pela explosão!";
-        _player->die();
+        _player->die(powerType);
     }
 
     if ((_enemy->getX() == _x && _enemy->getY() == _y) || // Célula da bomba

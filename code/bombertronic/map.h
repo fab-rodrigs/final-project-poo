@@ -32,7 +32,7 @@ private:
     int item;
 public:
     Treasure(QGraphicsScene *scene);
-    void dropItem();//(Player *player);
+    void getPower(int x, int y);
 };
 
 #endif // MAP_H
