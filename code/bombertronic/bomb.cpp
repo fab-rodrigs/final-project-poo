@@ -29,10 +29,6 @@ void Bomb::explode() {
         delete this;
         qDebug() << "A bomba explodiu!";
     });
-
-
-
-
 }
 
 void Bomb::detector(int cellX, int cellY, Map *_map, Player *_player, Enemy *_enemy, Treasure *_treasure){
