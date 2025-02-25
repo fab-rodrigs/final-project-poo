@@ -13,6 +13,9 @@ private:
     Map *map;
     Player *_player;
     PowerUp *_power;
+    int powerType = 0;
+    QTimer * timer;
+
 public:
     Enemy(int startX, int startY, Map *map, Player *player, PowerUp *power);
     void randomMoviment();
@@ -21,6 +24,8 @@ public:
 
     int getX();
     int getY();
+
+    virtual ~Enemy();
 };
 
 #endif // ENEMY_H

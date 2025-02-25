@@ -5,6 +5,7 @@
 
 Enemy::Enemy(int startX, int startY, Map *map, Player *player, PowerUp *power) : map(map), _player(player), _power(power)
 {
+    srand(time(0));
     x = startX;
     y = startY;
     setZValue(1);
@@ -13,7 +14,7 @@ Enemy::Enemy(int startX, int startY, Map *map, Player *player, PowerUp *power) :
     setPixmap(QPixmap(":/img/bot.png").scaledToWidth(16));
     setPos(startX, startY);
 
-    QTimer *timer = new QTimer(this);
+    timer = new QTimer(this);
     timer->setInterval(1000);
     connect(timer, &QTimer::timeout, this, &Enemy::randomMoviment);
     timer->start();
@@ -21,11 +22,9 @@ Enemy::Enemy(int startX, int startY, Map *map, Player *player, PowerUp *power) :
 
 void Enemy::randomMoviment()
 {
-    srand(time(0));
     int speed = 16;
     int nextX;
     int nextY;
-    int powerType = 0;
 
     //qDebug() << "Inimigo se preparando...";
 
@@ -63,7 +62,7 @@ void Enemy::randomMoviment()
 
     if (_player && x == _player->getX() && y == _player->getY()) {
         qDebug() << "Inimigo matou o jogador!";
-        _player->die(powerType);
+        _player->die();
     }
 }
 
@@ -82,4 +81,9 @@ int Enemy::getX()
 int Enemy::getY()
 {
     return y;
+}
+
+Enemy::~Enemy()
+{
+    delete timer;
 }

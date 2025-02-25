@@ -21,7 +21,8 @@ public:
     void move(int newX, int newY);
     void loseLife();
     void addScore();
-    void die(int powerType);
+    void setPowerType(int powerType) { powerUpType = powerType; }
+    void die();
     void win();
 
     int getX();

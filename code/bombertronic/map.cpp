@@ -64,8 +64,6 @@ void Map::generateMap(){
 }
 
 
-
-
 Obstacle::Obstacle(QGraphicsScene *scene) : Map(scene, 240, 240) {}
 
 

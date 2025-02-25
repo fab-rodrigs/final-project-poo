@@ -19,6 +19,7 @@ private:
     Enemy *_enemy;
     Treasure *_treasure;
     PowerUp *_power;
+    int powerType = 0;
 public:
     Bomb(Map *map, Player *player, Enemy *enemy, Treasure *treasure, PowerUp *power, int x, int y);
     void changeType();

@@ -12,6 +12,7 @@ Player::Player(int startX, int startY, Map * m){
 
     setPixmap(QPixmap(":/img/player.png").scaledToWidth(16));
     setPos(startX, startY);
+    powerUpType = 0;
 }
 
 void Player::move(int newX, int newY) {
@@ -54,14 +55,15 @@ int PowerUp::usePowerUp(int type)
     return type;
 }
 
-void Player::die(int powerType)
+void Player::die()
 {
     QMessageBox gameOverBox;
-    if(powerType){
+    if(powerUpType){
         gameOverBox.setWindowTitle("Power-Up");
         gameOverBox.setText("Você possui mais uma vida!");
         gameOverBox.addButton("Continuar", QMessageBox::RejectRole);
         qDebug() << "PowerUp usado! O jogador possui uma vida extra.";
+        powerUpType = 0;
     }
     else{
         scene()->removeItem(this);
